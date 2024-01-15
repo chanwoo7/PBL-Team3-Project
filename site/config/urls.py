@@ -21,5 +21,5 @@ from adApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('adApp/', views.index),
+    path('', views.index),
 ]
