@@ -9,6 +9,9 @@
         .container {
             text-align: center;
         }
+        section{
+            line-height: 10px; 
+        }
         .box {
           display: inline-block; /* 인라인 블록 요소로 배치 */
           width: 100px; /* 원하는 너비 설정 */
@@ -30,7 +33,7 @@
             display: flex;
         }
         article, aside {
-            border: 1px solid #ddd;
+            border: 1px;
             padding: 15px;
             margin: 10px;
         }
@@ -38,27 +41,82 @@
             flex-basis: 20%;
         }
     </style>
+
+    
 </head>
 <body>
-    <h2>AD Manager Platform - AD List</h2>
-    <input type="button" value="ADD">
-    <input type="button" value="AD Test"><br>
+    <header>
+        <link rel="stylesheet" href="headerStyles.css">
+        
+        <h2>AD Manager Platform - AD List</h2>
+        <input type="button" id="ADDo" value="ADD">
+        <input type="button" id="ADTo" value="AD Test">
 
-    <div class="box">
-        <select><option>검색타입</option></select>
-    </div>
-    <div class="box">
-        <input type="text" placeholder="검색어">
-    </div>
-    <div class="box">
-        <input type="button" value="검색"><br>
-    </div>
+        <div id="ADDcontainer" class="hidden">
+            <div id="ADDcontent"><div class="name">시작 날짜<br>
+                <input type="date" id="adStartDate" min="2024-01-17" value="2024-01-17">
+            
+                <div class="name">type<br>
+                    <select id="adType"><option>광고타입</option></select>
+                </div>
+                <div class="name">title<br>
+                    <input type="text" id="adTitle" placeholder="title">
+                </div>
+                <div class="name">시작 날짜<br>
+                    <input type="date" id="adStartDate" min="2024-01-17" value="2024-01-17">
+                </div>
+                <div class="name">종료 날짜<br>
+                    <input type="date" id="adEndDate" min="2024-01-18" value="2024-01-18">
+                </div>
+                <div class="name">
+                    <input type="button" class="ADDc" id="ADDok" value="확인">
+                    <input type="button" class="ADDc" id="ADDcancel" value="취소">
+                </div>
+            </div>
+        </div>
+
+        <div id="ADTcontainer" class="hidden">
+            <div id="ADTcontent">
+                <p>AD Test구현해야해용</p>
+                <div class="name">
+                    <input type="button" class="ADTc" id="ADTok" value="확인">
+                    <input type="button" class="ADTc" id="ADTcancel" value="취소">
+                </div>
+            </div>
+        </div>
+
+
+        <script src="header.js"></script>
+    </header>
+    
+
+
+
+
+
+
+
+
+
+
+    <section class="container">
+        <link rel="stylesheet" href="searchStyles.css">
+
+        <select id="searchSelect"><option>검색타입</option></select>
+        
+        <input type="text" id="searchContent" placeholder="검색어">
+        
+        <input type="button" id="search" value="검색">
+
+    </section>
+
+
 
     <section>
         <div style="flex-grow: 2; margin-right: 20px;">
             <!-- 광고 이벤트 섹션 -->
             <article>
-                <link rel="stylesheet" href="styles.css">
+                <link rel="stylesheet" href="tableStyles.css">
                 <table border="1">
                     <tr>
                         <th>idx</th>
@@ -69,71 +127,55 @@
                         <th>regdate</th>
                         <th>action</th>
                     </tr>
-                    <tr>
-                        <th>1</th>
-                        <th>현대자동차</th>
-                        <th>아이오닉 이벤트</th>
-                        <th>2023 06 26 00:00:00~2023 07 01 00:00:00</th>
-                        <th>1000</th>
-                        <th>2023/05/05 12:00:00</th>
-                        <th>
-                            <input type="button" value="상세">
-                            <input type="button" value="수정">
-                            <input type="button" value="삭제">
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>2</th>
-                        <th>삼성 갤럭시 100</th>
-                        <th>헤드기어폰 이벤트</th>
-                        <th>2023 06 26 00:00:00~2023 07 01 00:00:00</th>
-                        <th>1000</th>
-                        <th>2023/05/05 12:02:00</th>
-                        <th>
-                            <input type="button" value="상세">
-                            <input type="button" value="수정">
-                            <input type="button" value="삭제">
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>3</th>
-                        <th>노동부 일잘러</th>
-                        <th>일을 잘하려면 여기로...</th>
-                        <th>2023 06 26 00:00:00~2023 07 01 00:00:00</th>
-                        <th>1500</th>
-                        <th>2023/06/01 12:00:00</th>
-                        <th>
-                            <input type="button" value="상세">
-                            <input type="button" value="수정">
-                            <input type="button" value="삭제">
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>4</th>
-                        <th>피망 신규게임</th>
-                        <th>뉴 맞고 플러스 이벤트</th>
-                        <th>2023 06 26 00:00:00~2023 07 01 00:00:00</th>
-                        <th>5000</th>
-                        <th>2023/06/01 12:05:00</th>
-                        <th>
-                            <input type="button" value="상세">
-                            <input type="button" value="수정">
-                            <input type="button" value="삭제">
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>5</th>
-                        <th>코드스테이츠 신규강좌</th>
-                        <th>국민대 AD 시스템 PBL</th>
-                        <th>2023 06 26 00:00:00~2023 07 01 00:00:00</th>
-                        <th>3000</th>
-                        <th>2023/06/10 12:05:00</th>
-                        <th>
-                            <input type="button" value="상세">
-                            <input type="button" value="수정">
-                            <input type="button" value="삭제">
-                        </th>
-                    </tr>
+                    
+                    <script src="adTable.js"></script>
+                    
+
+                    <div id="detailContainer" class="hidden">
+                        <div id="detailContent">
+                            <p>DETAIL 구현해야합니다</p>
+                            <div class="name">
+                                <input type="button" class="detailC" id="detialOk" value="확인">
+                                <input type="button" class="detailC" id="detailCancel" value="취소">
+                            </div>
+                        </div>
+                    </div>  
+
+                    <!--edit, del, detail,test 구현해야합니다--><div id="editContainer" class="hidden">
+                        <div id="editContent"><div class="name">시작 날짜<br>
+                            <input type="date" id="adStartDate" min="2024-01-17" value="2024-01-17">
+                        
+                            <div class="name">type<br>
+                                <select id="adType"><option>광고타입</option></select>
+                            </div>
+                            <div class="name">title<br>
+                                <input type="text" id="adTitle" placeholder="title">
+                            </div>
+                            <div class="name">시작 날짜<br>
+                                <input type="date" id="adStartDate" min="2024-01-17" value="2024-01-17">
+                            </div>
+                            <div class="name">종료 날짜<br>
+                                <input type="date" id="adEndDate" min="2024-01-18" value="2024-01-18">
+                            </div>
+                            <div class="name">
+                                <input type="button" class="editC" id="editOk" value="확인">
+                                <input type="button" class="editC" id="editCancel" value="취소">
+                            </div>
+                        </div>
+                    </div>
+            
+
+                    <div id="delContainer" class="hidden">
+                        <div id="delContent">
+                            <p>DEL 구현해야합니다</p>
+                            <div class="name">
+                                <input type="button" class="delC" id="delOk" value="확인">
+                                <input type="button" class="delC" id="delCancel" value="취소">
+                            </div>
+                        </div>
+                    </div>
+            
+
                 </table>
             </article>
             <!-- 추가 질문과 답변 -->
@@ -142,3 +184,4 @@
 
 </body>
 </html>
+<!--edit, del, detail,test 구현해야합니다-->

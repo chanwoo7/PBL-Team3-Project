@@ -1,0 +1,30 @@
+.container {
+  width: 100;
+  height: 30px;
+  margin:10px 10px;
+}
+#search, #searchSelect, #searchContent{
+  margin: 0 10px;
+}
+
+#searchContent{
+  height:40px;
+  width:60%;
+}
+
+#searchSelect{
+  height: 40px;
+  width: 20%;
+  text-align: center;
+  text-align-last: center;
+}
+
+#search{
+  height: 40px;
+  width: 15%;
+  background-color:deepskyblue;
+}
+
+table{
+  margin:0 auto;
+}
