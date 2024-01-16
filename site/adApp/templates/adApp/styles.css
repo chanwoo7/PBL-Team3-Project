@@ -1,0 +1,11 @@
+.container {
+  margin: 25px;
+  width: 350px;
+  height: 200px;
+  outline: dashed 4px black;
+}
+
+
+h1 {
+  text-align: center;
+}
