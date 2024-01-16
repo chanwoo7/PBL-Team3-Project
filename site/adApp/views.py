@@ -9,3 +9,6 @@ def index(request):
 
 def main(request):
     return render(request,'adApp/main.html')
+
+def adManager(request):
+    return render(request, 'adApp/adManager.html')
