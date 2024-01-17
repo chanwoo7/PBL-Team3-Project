@@ -20,8 +20,8 @@ class Ad(models.Model):
     name = models.CharField(max_length=50)
     url = models.CharField(max_length=500)
     type = models.CharField(max_length=10)
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    start_time = models.DateField()
+    end_time = models.DateField()
     ad_price = models.IntegerField(default=0)
 
 
@@ -49,8 +49,8 @@ class User(models.Model):
 class MediaTest(models.Model):
     file = models.FileField(blank=True, upload_to='ad/%Y%m%d')
     desc = models.CharField(blank=True, max_length=20)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)
 
     def delete(self, *args, **kwargs):
         super(MediaTest, self).delete(*args, **kwargs)
@@ -68,8 +68,8 @@ class BlockedUser(models.Model):
 class Block(models.Model):
     ad_id = models.ForeignKey(Ad, on_delete=models.CASCADE)
     user_id = models.ForeignKey(BlockedUser, on_delete=models.CASCADE)
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    start_time = models.DateField()
+    end_time = models.DateField()
 
 
 # 유저 아이피
