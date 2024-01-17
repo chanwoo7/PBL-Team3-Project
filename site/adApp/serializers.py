@@ -13,4 +13,3 @@ class AdSerializer(ModelSerializer):
         model = Ad
         fields = '__all__'
 
-    advId = AdvSerializer()

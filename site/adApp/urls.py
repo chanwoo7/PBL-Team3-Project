@@ -1,10 +1,17 @@
 from django.urls import path
-from django.conf.urls.static import static
-from django.conf import settings
+from . import api_views
 
 from . import views
 
 urlpatterns = [
+    # API 경로
+    path('api/add_ad/', api_views.add_ad, name='add_ad'),
+    path('api/edit_ad/<int:ad_id>/', api_views.edit_ad, name='edit_ad'),
+    path('api/delete_ad/<int:ad_id>/', api_views.delete_ad, name='delete_ad'),
+    path('api/search_ads/', api_views.search_ads, name='search_ads'),
+    path('api/get_ad_details/<int:ad_id>/', api_views.get_ad_details, name='get_ad_details'),
+
+    # HTML 경로
     path('', views.index,name='print'),
     path('main/', views.main, name='main'),
     path('adManager/', views.adManager, name='manager'),
