@@ -1,5 +1,7 @@
-from django.db import models
+import os
 
+from django.db import models
+from django.conf import settings
 # Create your models here.
 
 
@@ -41,6 +43,18 @@ class User(models.Model):
     age = models.IntegerField(default=0)
     lang = models.CharField(max_length=10)
     # 필요 시 추가
+
+
+# 미디어 테스트 테이블
+class MediaTest(models.Model):
+    file = models.FileField(blank=True, upload_to='ad/%Y%m%d')
+    desc = models.CharField(blank=True, max_length=20)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def delete(self, *args, **kwargs):
+        super(MediaTest, self).delete(*args, **kwargs)
+        os.remove(os.path.join(settings.MEDIA_ROOT, self.file.path))
 
 
 # 광고-사용자 차단 관련 모델
