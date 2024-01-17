@@ -18,7 +18,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.5);
@@ -31,6 +31,7 @@
 
 #ADDcontent, #ADTcontent{
     position: absolute;
+    
     background-color:deepskyblue;
     width: 300px;
     height: 300px;
@@ -44,13 +45,21 @@
 }
 
 .name{   
-    padding:5px;
+    padding:3px;
+    margin: 0 auto;
 }
 
-#adType, #adTitle, #adStartDate, #adEndDate{
+#adType, #adUrl, #adTitle, #advId, #adPrice{
     width:280px;
-    height: 30px;
+    
     text-align: center;
     text-align-last: center;
   
 }
+#adStartDate, #adEndDate{
+    height: 30px;
+    text-align: center;
+    margin: 0 auto;
+    text-align-last: center;
+}
+
