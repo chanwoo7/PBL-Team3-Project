@@ -3,3 +3,4 @@
 *.pyc
 __pycache__/
 site/config/my_settings.py
+site/media/

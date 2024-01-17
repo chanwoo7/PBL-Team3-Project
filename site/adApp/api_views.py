@@ -1,9 +1,10 @@
+from django.http import FileResponse
 from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Ad
-from .serializers import AdSerializer
+from .models import Ad, MediaTest
+from .serializers import AdSerializer, MediaTestSerializer
 from django.db.models import Q
 
 
@@ -68,4 +69,20 @@ def get_ad_details(request, ad_id):
     return Response(serializer.data)
 
 
-# 광고 테스트 추가 예정
+# 광고 파일 업로드
+@api_view(['POST'])
+def upload_media(request):
+    if request.method == 'POST':
+        serializer = MediaTestSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+# 광고 파일 띄우기
+@api_view(['GET'])
+def show_media(request, media_id):
+    media = get_object_or_404(MediaTest, pk=media_id)
+    file_path = media.file.path
+    return FileResponse(open(file_path, 'rb'))

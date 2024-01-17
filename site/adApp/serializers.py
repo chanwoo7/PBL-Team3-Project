@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Adv, Ad
+from .models import *
 
 
 class AdvSerializer(ModelSerializer):
@@ -11,5 +11,11 @@ class AdvSerializer(ModelSerializer):
 class AdSerializer(ModelSerializer):
     class Meta:
         model = Ad
+        fields = '__all__'
+
+
+class MediaTestSerializer(ModelSerializer):
+    class Meta:
+        model = MediaTest
         fields = '__all__'
 
