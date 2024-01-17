@@ -15,9 +15,15 @@ for (let idx=0; idx<5; idx++){
                         <th>${count[idx]}</th>
                         <th>${regdate[idx]}</th>
                         <th>
-                            <input type="button" class="detail" id="detail${idx}" value="상세">
-                            <input type="button" class="edit" id="edit${idx}"value="수정">
-                            <input type="button" class="del" id="del${idx}" value="삭제">
+                            <input type="button" class="detailO" id="detail${idx}" value="상세">
+                            <input type="button" class="editO" id="edit${idx}"value="수정">
+                            <input type="button" class="delO" id="del${idx}" value="삭제">
                         </th>
-    </tr>${isbr}`)
+                        
+                    </tr>
+
+                    
+
+
+        ${isbr}`)
 }

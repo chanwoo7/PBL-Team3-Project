@@ -40,6 +40,8 @@
         aside {
             flex-basis: 20%;
         }
+        
+
     </style>
 
     
@@ -86,8 +88,8 @@
             </div>
         </div>
 
-
-        <script src="{% static 'js/header.js' %}"></script>
+        
+        <script src="{% static 'js/headerModals.js' %}"></script>
     </header>
     
 
@@ -96,9 +98,6 @@
 
 
     
-
-
-
 
     <section class="container">
         <link rel="stylesheet" href="{% static 'css/searchStyles.css' %}">
@@ -110,6 +109,13 @@
         <input type="button" id="search" value="검색">
 
     </section>
+
+
+
+
+
+
+
 
 
 
@@ -135,32 +141,42 @@
                     <div id="detailContainer" class="hidden">
                         <div id="detailContent">
                             <p>DETAIL 구현해야합니다</p>
+                        
                             <div class="name">
                                 <input type="button" class="detailC" id="detialOk" value="확인">
                                 <input type="button" class="detailC" id="detailCancel" value="취소">
                             </div>
                         </div>
                     </div>  
-                    <!--edit, del, detail,test 구현해야합니다--><div id="editContainer" class="hidden">
-                        <div id="editContent"><div class="name">시작 날짜<br>
-                            <input type="date" id="adStartDate" min="2024-01-17" value="2024-01-17">
-                        
-                            <div class="name">type<br>
-                                <select id="adType"><option>광고타입</option></select>
-                            </div>
-                            <div class="name">title<br>
-                                <input type="text" id="adTitle" placeholder="title">
-                            </div>
+
+                    
+                    <div id="editContainer" class="hidden">
+                        <div id="editContent">
                             <div class="name">시작 날짜<br>
                                 <input type="date" id="adStartDate" min="2024-01-17" value="2024-01-17">
                             </div>
+                            
+                            <div class="name">type<br>
+                                <select id="adType"><option>광고타입</option></select>
+                            </div>
+                            
+                            <div class="name">title<br>
+                                <input type="text" id="adTitle" placeholder="title">
+                            </div>
+                            
+                            <div class="name">시작 날짜<br>
+                                <input type="date" id="adStartDate" min="2024-01-17" value="2024-01-17">
+                            </div>
+                            
                             <div class="name">종료 날짜<br>
                                 <input type="date" id="adEndDate" min="2024-01-18" value="2024-01-18">
                             </div>
+                            
                             <div class="name">
                                 <input type="button" class="editC" id="editOk" value="확인">
                                 <input type="button" class="editC" id="editCancel" value="취소">
                             </div>
+                        
                         </div>
                     </div>
             
@@ -168,6 +184,7 @@
                     <div id="delContainer" class="hidden">
                         <div id="delContent">
                             <p>DEL 구현해야합니다</p>
+                            
                             <div class="name">
                                 <input type="button" class="delC" id="delOk" value="확인">
                                 <input type="button" class="delC" id="delCancel" value="취소">
@@ -175,7 +192,7 @@
                         </div>
                     </div>
             
-
+                   <script src="{% static 'js/adTableModals.js' %}" ></script>
                 </table>
             </article>
             <!-- 추가 질문과 답변 -->

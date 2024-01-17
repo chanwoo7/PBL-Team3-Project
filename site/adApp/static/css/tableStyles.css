@@ -1,19 +1,16 @@
-.detail{
+.detailO{
     background-color: darkkhaki;
 }
 
-.edit{
+.editO{
     background-color: darkseagreen;
 }
 
-.del{
+.delO{
     background-color: brown;
 }
 
-
-
-
-#detailContainer.hidden, #editContainer.hidden, #delContainer.hidden{
+.hidden{
     display: none;
 }
 
