@@ -1,9 +1,0 @@
-{% if ad_list %}
-    <ul>
-    {% for ad in ad_list %}
-        <li><a href="/pybo/{{ ad.id }}/">{{ ad.subject }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>질문이 없습니다.</p>
-{% endif %}

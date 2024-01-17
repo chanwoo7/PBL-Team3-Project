@@ -15,5 +15,4 @@ urlpatterns = [
     path('', views.index,name='print'),
     path('main/', views.main, name='main'),
     path('adManager/', views.adManager, name='manager'),
-    path('ad_list/', views.ad_list, name='ad_list')
 ]
