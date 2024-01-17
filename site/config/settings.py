@@ -128,3 +128,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'adApp', 'static'),
 ]
+
+
+# ------------------------------ #
+# Media Setting
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# ------------------------------ #

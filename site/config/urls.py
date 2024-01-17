@@ -21,3 +21,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('adApp.urls')),
 ]
+
+# ------------------------------ #
+# Media Setting
+from django.conf.urls.static import static
+from django.conf import settings
+
+# 수동으로 미디어 파일 서빙을 위해
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# ------------------------------ #
