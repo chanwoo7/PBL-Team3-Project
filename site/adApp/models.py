@@ -47,7 +47,7 @@ class User(models.Model):
 
 # 미디어 테스트 테이블
 class MediaTest(models.Model):
-    file = models.FileField(blank=True, upload_to='ad')
+    file = models.FileField(upload_to='ad')
     desc = models.CharField(blank=True, max_length=20)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
