@@ -3,8 +3,8 @@
 <head>
     <meta charset = "UTF-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>AD Manager Platform</title>
+    {% load static %}
     <style>
         .container {
             text-align: center;
@@ -46,7 +46,7 @@
 </head>
 <body>
     <header>
-        <link rel="stylesheet" href="headerStyles.css">
+        <link rel="stylesheet" href="{% static 'css/headerStyles.css' %}">
         
         <h2>AD Manager Platform - AD List</h2>
         <input type="button" id="ADDo" value="ADD">
@@ -86,7 +86,7 @@
         </div>
 
 
-        <script src="header.js"></script>
+        <script src="{% static 'js/header.js' %}"></script>
     </header>
     
 
@@ -94,13 +94,13 @@
 
 
 
-
+    
 
 
 
 
     <section class="container">
-        <link rel="stylesheet" href="searchStyles.css">
+        <link rel="stylesheet" href="{% static 'css/searchStyles.css' %}">
 
         <select id="searchSelect"><option>검색타입</option></select>
         
@@ -116,7 +116,7 @@
         <div style="flex-grow: 2; margin-right: 20px;">
             <!-- 광고 이벤트 섹션 -->
             <article>
-                <link rel="stylesheet" href="tableStyles.css">
+                <link rel="stylesheet" href="{% static 'css/tableStyles.css' %}">
                 <table border="1">
                     <tr>
                         <th>idx</th>
@@ -128,7 +128,7 @@
                         <th>action</th>
                     </tr>
                     
-                    <script src="adTable.js"></script>
+                    <script src="{% static 'js/adTable.js' %}"></script>
                     
 
                     <div id="detailContainer" class="hidden">
@@ -140,7 +140,6 @@
                             </div>
                         </div>
                     </div>  
-
                     <!--edit, del, detail,test 구현해야합니다--><div id="editContainer" class="hidden">
                         <div id="editContent"><div class="name">시작 날짜<br>
                             <input type="date" id="adStartDate" min="2024-01-17" value="2024-01-17">
