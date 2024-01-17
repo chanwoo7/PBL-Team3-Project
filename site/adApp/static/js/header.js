@@ -9,11 +9,10 @@ const ADT = document.getElementById('ADTcontainer');
 
 ADDo.addEventListener('click', () => {
     ADD.classList.remove('hidden');
-    //ADD.style.zIndex='100';
+    
 })
 ADTo.addEventListener('click', () => {
     ADT.classList.remove('hidden');
-    
 })
 
 ADDc[0].addEventListener('click', () => {
