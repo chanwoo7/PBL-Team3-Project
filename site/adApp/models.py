@@ -40,6 +40,7 @@ class User(models.Model):
     sex = models.CharField(max_length=2)
     age = models.IntegerField(default=0)
     lang = models.CharField(max_length=10)
+    # 필요 시 추가
 
 
 # 광고-사용자 차단 관련 모델
