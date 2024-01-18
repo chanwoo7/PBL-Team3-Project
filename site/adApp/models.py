@@ -18,7 +18,7 @@ class Ad(models.Model):
     id = models.AutoField(primary_key=True)
     adv_id = models.ForeignKey(Adv, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
-    text = models.CharField(max_length=100)
+    text = models.CharField(max_length=100, blank=True)
     url = models.CharField(max_length=500)
     type = models.CharField(max_length=10)
     start_time = models.DateField()
