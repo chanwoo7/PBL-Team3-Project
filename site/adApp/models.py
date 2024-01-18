@@ -47,10 +47,10 @@ class User(models.Model):
 
 # 미디어
 class Media(models.Model):
+    id = models.AutoField(primary_key=True)
+    ad_id = models.ForeignKey(Ad, on_delete=models.CASCADE)
     file = models.FileField(upload_to='ad')
     desc = models.CharField(blank=True, max_length=20)
-    created_at = models.DateField(auto_now_add=True)
-    updated_at = models.DateField(auto_now=True)
 
     def delete(self, *args, **kwargs):
         super(Media, self).delete(*args, **kwargs)

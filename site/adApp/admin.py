@@ -23,9 +23,9 @@ from django.utils.safestring import mark_safe
 
 @admin.register(Media)
 class POSTAdmin(admin.ModelAdmin):
-    list_display = ['id', 'file_tag', 'desc', 'created_at', 'updated_at']
+    list_display = ['id', 'ad_id', 'file_tag', 'desc']
     list_display_links = ['desc']
-    list_filter = ['created_at', 'desc']
+    list_filter = ['desc']
     search_fields = ['desc']
 
     def file_tag(self, post):
