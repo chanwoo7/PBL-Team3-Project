@@ -18,4 +18,3 @@ class MediaSerializer(ModelSerializer):
     class Meta:
         model = Media
         fields = '__all__'
-
