@@ -197,7 +197,7 @@
                             </ul>
                         </div>
                         <button style="background-color: yellow; border-color: black">Web View</button>
-                        <button style="background-color: #6df76d; border-color: black">확인</button>
+                        <button id="targetConfirmButton" style="background-color: #6df76d; border-color: black">확인</button>
                 </div>
             </div>
         </div>
@@ -331,6 +331,30 @@
             
         </div>
     </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to close the ADTcontainer modal
+    function closeADTcontainerModal() {
+        var modal = document.getElementById('ADTcontainer');
+        if (modal) {
+            modal.classList.add('hidden');
+        }
+    }
+
+    // Event listener for the '확인' button in the Target modal
+    var targetConfirmButton = document.getElementById('targetConfirmButton');
+    if (targetConfirmButton) {
+        targetConfirmButton.addEventListener('click', closeADTcontainerModal);
+    }
+
+    // Event listener for the '확인' button in the Result modal
+    var resultConfirmButton = document.getElementById('resultConfirmButton');
+    if (resultConfirmButton) {
+        resultConfirmButton.addEventListener('click', closeADTcontainerModal);
+    }
+});
+</script>
 
 </body>
 </html>
