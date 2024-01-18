@@ -54,43 +54,55 @@
     
 </head>
 <body>
+
+<!--ADD, AD Test-->
     <header>
         <link rel="stylesheet" href="{% static 'css/headerStyles.css' %}">
-        
+        <!-- <link rel="stylesheet" href="../static/css/headerStyles.css"> -->
         <h2>AD Manager Platform - AD List</h2>
         <input type="button" id="ADDo" value="ADD">
         <input type="button" id="ADTo" value="AD Test">
 
+    <!--ADD 모달-->
         <div id="ADDcontainer" class="hidden">
-            <div id="ADDcontent">
+            <f id="ADDcontent">
                 
-                <div class="name">type <br>
-                    <select id="adType"><option>광고타입</option></select>
+                <div class="name">
+                    <select id="adType">
+                        <option>광고타입</option>
+                        <option value="vedio">동영상</option>
+                        <option value="columBanner">세로베너</option>
+                        <option value="rowBanner">가로베너</option>
+                    </select>
                 </div>
 
-                <div class="name">title <br>            <!--이미지 업로더 구현해야합니다.-->
-                    <input type="text" id="adTitle" placeholder="title">
-                </div>
-
-                <div class="name">url <br>
-                    <input type="text" id="adUrl" placeholder="url">
-                    
+                <div class="name">            
+                    <input type="text" id="adTitle" placeholder="광고 제목">
                 </div>
                 
                 <div class="name">
-                    
+                    <input type="text" id="adText" placeholder="광고 설명">
+                </div>
+                
+                <div class="name">
+                    <input type="text" id="adUrl" placeholder="url">
+                </div>
+
+                <div class="name">
+                    <input type="file" id="adFile" placeholder="url" required multiple>    
+                </div>
+
+                <div class="name">
                     <input type="date" id="adStartDate" min="2024-01-17" value="2024-01-17">
                     <p>~</p>
                     <input type="date" id="adEndDate" min="2024-01-18" value="2024-01-18">
                 </div>
                 
                 <div class="name">
-                    
                     <input type="text" id="advId" placeholder="광고주 ID">
                 </div>
 
                 <div class="name">
-                    
                     <input type="text" id="adPrice" placeholder="광고 비용">
                 </div>
                 
@@ -98,10 +110,10 @@
                     <input type="button" class="ADDc" id="ADDok" value="확인">
                     <input type="button" class="ADDc" id="ADDcancel" value="취소">
                 </div>
-            </div>
+            </f>
         </div>
 
-
+    <!--AD Test 모달-->
         <div id="ADTcontainer" class="hidden">
             <div id="ADTcontent">
                 <p>AD Test구현해야해용</p>
@@ -114,34 +126,39 @@
 
         
         <script src="{% static 'js/headerModals.js' %}"></script>
+        <!-- <script src="../static/js/headerModals.js"></script> -->
     </header>
 
-
+<!--검색-->
     <section class="container">
-        <link rel="stylesheet" href="{% static 'css/searchStyles.css' %}">
+        <!--<link rel="stylesheet" href="{% static 'css/searchStyles.css' %}">-->
+        <link rel="stylesheet" href="../static/css/searchStyles.css">
 
-        <select id="searchSelect"><option>검색타입</option></select>
+        <select id="searchSelect">
+            <option>검색타입</option>
+            <option value="id">광고 ID</option>
+            <option value="adv_id">광고주 ID</option>
+            <option value="name">광고 제목</option>
+            <option value="text">광고 내용</option>
+            <option value="type">광고 타입</option>
+
+        </select>
         
         <input type="text" id="searchContent" placeholder="검색어">
         
         <input type="button" id="search" value="검색">
-
+        
+        <!-- <script src="{% static 'js/search.js' %}" ></script> -->
+        <script src="../static/js/search.js" ></script>
+        
     </section>
 
-
-
-
-
-
-
-
-
-
+<!--광고 리스트-->
     <section>
         <div style="flex-grow: 2; margin-right: 20px;">
-            <!-- 광고 이벤트 섹션 -->
             <article>
                 <link rel="stylesheet" href="{% static 'css/tableStyles.css' %}">
+                <!-- <link rel="stylesheet" href="../static/css/tableStyles.css"> -->
                 <table border="1">
                     <tr>
                         <th>idx</th>
@@ -152,10 +169,11 @@
                         <th>regdate</th>
                         <th>action</th>
                     </tr>
-                    
+<!--광고리스트 동적페이지-->                    
                     <script src="{% static 'js/adTable.js' %}"></script>
+                    <!-- <script src="../static/js/adTable.js"></script> -->
                     
-
+<!--detail 모달-->
                     <div id="detailContainer" class="hidden">
                         <div id="detailContent">
                             <p>DETAIL 구현해야합니다</p>
@@ -167,20 +185,33 @@
                         </div>
                     </div>  
 
-                    
+<!--edit 모달-->                    
                     <div id="editContainer" class="hidden">
                         <div id="editContent">
 
-                            <div class="name">type<br>
-                                <select id="editAdType"><option>광고타입</option></select>
+                            <div class="name">
+                                <select id="editAdType">
+                                    <option>광고타입</option>
+                                    <option value="vedio">동영상</option>
+                                    <option value="columBanner">세로베너</option>
+                                    <option value="rowBanner">가로베너</option>
+                                </select>
                             </div>
             
-                            <div class="name">title<br>
-                                <input type="text" id="editAdTitle" placeholder="title">
+                            <div class="name">
+                                <input type="text" id="editAdTitle" placeholder="광고 제목">
                             </div>
+                            <div class="name">            
+                                <input type="text" id="editAdText" placeholder="광고 설명">
+                            </div>
+                            
             
-                            <div class="name">url<br>
+                            <div class="name">
                                 <input type="text" id="editAdUrl" placeholder="url">
+                            </div>
+
+                            <div class="name">
+                                <input type="file" id="editAdFile" placeholder="url" required multiple>    
                             </div>
                             
                             <div class="name">
@@ -204,7 +235,7 @@
                         </div>
                     </div>
             
-
+<!--del 모달-->
                     <div id="delContainer" class="hidden">
                         <div id="delContent">
                             <p>정말로 삭제하시겠습니까?</p>
@@ -217,12 +248,12 @@
                     </div>
             
                    <script src="{% static 'js/adTableModals.js' %}" ></script>
+                   <!-- <script src="../static/js/adTableModals.js" ></script> -->
                 </table>
             </article>
-            <!-- 추가 질문과 답변 -->
+            
         </div>
     </section>
 
 </body>
 </html>
-<!--edit, del, detail,test 구현해야합니다-->

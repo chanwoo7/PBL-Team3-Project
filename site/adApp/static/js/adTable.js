@@ -1,20 +1,21 @@
-let id = ["132","245","256","590","800"]
-let title=["현대","삼성","노동부","피망","코드스테이츠"];
-let text=["아이오닉","헤드기어폰","일잘","뉴맞고","국민대AD"];
-let ExposureDatetime=["1~2","2~3","3~4","4~5","5~6"];
-let count=[1,2,3,4,5]
-let regdate=[1,2,3,4,5]
+var adIdL = ["1","245","256","590","800"]
+var adNameL=["현대","삼성","노동부","피망","코드스테이츠"];
+var adTextL=["아이오닉","헤드기어폰","일잘","뉴맞고","국민대AD"];
+var adStartDateL = [1,2,3,4,5]
+var adEndDateL = [5,4,3,3,2,1]
+var countL=[1,2,3,4,5]
+var regdateL=[1,2,3,4,5]
 
 for (let idx=0; idx<5; idx++){
     let isbr = idx==7 ? "" : "<br>";
 
     document.write(`<tr>
-                        <th>${id[idx]}</th>
-                        <th>${title[idx]}</th>
-                        <th>${text[idx]}</th>
-                        <th>${ExposureDatetime[idx]}</th>
-                        <th>${count[idx]}</th>
-                        <th>${regdate[idx]}</th>
+                        <th>${adIdL[idx]}</th>
+                        <th>${adNameL[idx]}</th>
+                        <th>${adTextL[idx]}</th>
+                        <th>${adStartDateL[idx]}~${adEndDateL[idx]}</th>
+                        <th>${countL[idx]}</th>
+                        <th>${regdateL[idx]}</th>
                         <th>
                             <input type="button" class="detailO" id="detail${idx}" value="상세">
                             <input type="button" class="editO" id="edit${idx}"value="수정">

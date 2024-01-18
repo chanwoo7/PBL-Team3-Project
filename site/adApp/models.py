@@ -15,14 +15,23 @@ class Adv(models.Model):
 
 # 광고
 class Ad(models.Model):
+    TARGET_GENDER_CHOICES = [
+        ('남', '남성'),
+        ('여', '여성'),
+        ('없음', '없음'),
+    ]
+
     id = models.AutoField(primary_key=True)
     adv_id = models.ForeignKey(Adv, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
+    text = models.CharField(blank=True, max_length=100)
     url = models.CharField(max_length=500)
     type = models.CharField(max_length=10)
     start_time = models.DateField()
     end_time = models.DateField()
     ad_price = models.IntegerField(default=0)
+    target_age = models.IntegerField(blank=True, default=0)
+    target_gender = models.CharField(max_length=2, choices=TARGET_GENDER_CHOICES, default='없음')
 
 
 # 광고 분석
@@ -47,10 +56,10 @@ class User(models.Model):
 
 # 미디어
 class Media(models.Model):
+    id = models.AutoField(primary_key=True)
+    ad_id = models.ForeignKey(Ad, on_delete=models.CASCADE)
     file = models.FileField(upload_to='ad')
     desc = models.CharField(blank=True, max_length=20)
-    created_at = models.DateField(auto_now_add=True)
-    updated_at = models.DateField(auto_now=True)
 
     def delete(self, *args, **kwargs):
         super(Media, self).delete(*args, **kwargs)
