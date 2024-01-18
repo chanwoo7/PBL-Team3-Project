@@ -18,5 +18,5 @@ urlpatterns = [
     # HTML 경로
     path('', views.index,name='print'),
     path('main/', views.main, name='main'),
-    path('adManager/', views.adManager, name='manager'),
+    path('adManager/', views.ad_manager, name='manager'),
 ]
