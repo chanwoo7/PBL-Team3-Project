@@ -15,15 +15,23 @@ class Adv(models.Model):
 
 # 광고
 class Ad(models.Model):
+    TARGET_GENDER_CHOICES = [
+        ('남', '남성'),
+        ('여', '여성'),
+        ('없음', '없음'),
+    ]
+
     id = models.AutoField(primary_key=True)
     adv_id = models.ForeignKey(Adv, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
-    text = models.CharField(max_length=100, blank=True)
+    text = models.CharField(blank=True, max_length=100)
     url = models.CharField(max_length=500)
     type = models.CharField(max_length=10)
     start_time = models.DateField()
     end_time = models.DateField()
     ad_price = models.IntegerField(default=0)
+    target_age = models.IntegerField(blank=True, default=0)
+    target_gender = models.CharField(max_length=2, choices=TARGET_GENDER_CHOICES, default='없음')
 
 
 # 광고 분석
