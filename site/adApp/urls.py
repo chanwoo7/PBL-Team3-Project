@@ -1,6 +1,5 @@
 from django.urls import path
-from . import api_views
-from .cbv_api_views import *
+from .api_views import *
 from . import views
 
 urlpatterns = [
