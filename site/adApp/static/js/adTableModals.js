@@ -2,9 +2,11 @@ const detailO = document.getElementsByClassName('detailO');
 const editO = document.getElementsByClassName('editO');
 const delO = document.getElementsByClassName('delO');
 
-const detailC = document.getElementsByClassName('detailC'); // 0:확인, 1:취소
-const editC = document.getElementsByClassName('editC');
+const detailC = document.getElementById('detailOk'); 
+const editC = document.getElementsByClassName('editC');// 0:확인, 1:취소
 const delC = document.getElementsByClassName('delC');
+
+
 
 const detail = document.getElementById('detailContainer');
 const edit = document.getElementById('editContainer');
@@ -15,9 +17,14 @@ const del = document.getElementById('delContainer');
 
 // 각 광고 버튼 이벤트 - adId 설정
 for(let i=0; i<detailO.length; i++){    
+    
+    // get_ad_details API
     detailO[i].addEventListener('click', () =>{
         detail.classList.remove('hidden');
-        adId=adIdL[i];
+        var adId=adIdL[i];
+
+        var response = requestAPI('../api/get_ad_details/'+adId+'/',"GET")
+        console.log(response)
     });
     editO[i].addEventListener('click', () =>{
         edit.classList.remove('hidden');
@@ -30,16 +37,11 @@ for(let i=0; i<detailO.length; i++){
 }
 
 
-// get_ad_details API
-detailC[0].addEventListener('click', () =>{
-    detail.classList.add('hidden');
 
-    requestAPI('../api/get_ad_details/'+adId+'/',"GET")
-
-});
-detailC[1].addEventListener('click', () =>{
+detailC.addEventListener('click', () =>{
     detail.classList.add('hidden');
 });
+
 
 // edit_ad API
 editC[0].addEventListener('click', () =>{
@@ -53,7 +55,7 @@ editC[0].addEventListener('click', () =>{
     let adUrl = document.getElementById('editAdUrl').value;
     let adFile = document.getElementById('editAdFile');
     let adName = document.getElementById('editAdTitle').value;
-    let advId = document.getElementById('editAdvId').value;
+    let advName = document.getElementById('editAdvName').value;
     let editArray = {
         "name": adName,
         "url": adUrl,
@@ -62,7 +64,7 @@ editC[0].addEventListener('click', () =>{
         "type": adType,
         "start_time": document.getElementById('editAdStartDate').value,
         "end_time": document.getElementById('editAdEndTime').value,
-        "adv_id": advId,
+        "adv_id": advName,
         "ad_price": document.getElementById('editAdPrice').value,
     };
     requestAPI('../api/edit_ad/'+adId+'/', 'PUT',editArray)
@@ -86,7 +88,7 @@ delC[1].addEventListener('click', () =>{
 
 
 
-function requestAPI(url,met,jsonArray={}){
+function requestAPI1(url,met,jsonArray={}){
     const options = {
         method: met,
     };

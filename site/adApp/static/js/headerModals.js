@@ -27,7 +27,7 @@ ADDc[0].addEventListener('click', () => {
     let adUrl = document.getElementById('adUrl').value;
     let adFile = document.getElementById('adFile');
     let adName = document.getElementById('adTitle').value;
-    let advId = document.getElementById('advId').value;
+    let advName = document.getElementById('advName').value;
     let addArray = {
         "name": adName,
         "url": adUrl,
@@ -36,7 +36,7 @@ ADDc[0].addEventListener('click', () => {
         "type": adType,
         "start_time": document.querySelector('#adStartDate').value,
         "end_time": document.querySelector('#adEndDate').value,
-        "adv_id": advId,
+        "adv_name": advName,
         "ad_price": document.getElementById('adPrice').value,
     };
     console.log(addArray)
