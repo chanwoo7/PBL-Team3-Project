@@ -95,7 +95,7 @@ def get_ad_details(request, ad_id):
     return Response(serializer.data)
 
 
-# 광고 파일 업로드
+# 미디어 업로드
 @api_view(['POST'])
 def upload_media(request):
     if request.method == 'POST':
@@ -106,9 +106,17 @@ def upload_media(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# 광고 파일 띄우기
+# 미디어 재생
 @api_view(['GET'])
 def show_media(request, media_id):
     media = get_object_or_404(Media, pk=media_id)
     file_path = media.file.path
     return FileResponse(open(file_path, 'rb'))
+
+
+# 미디어 상세 보기
+@api_view(['GET'])
+def get_media_details(request, media_id):
+    media = get_object_or_404(Media, pk=media_id)
+    serializer = MediaSerializer(media)
+    return Response(serializer.data)

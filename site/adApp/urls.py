@@ -12,6 +12,7 @@ urlpatterns = [
     path('api/get_all_ads/', api_views.get_all_ads, name='get_all_ads'),
     path('api/get_ad_details/<int:ad_id>/', api_views.get_ad_details, name='get_ad_details'),
     path('api/upload_media/', api_views.upload_media, name='upload_media'),
+    path('api/get_media_details/<int:media_id>', api_views.get_media_details, name='get_media_details'),
 
     # 광고 이미지/동영상 경로
     path('media/<int:media_id>/', api_views.show_media, name='show_media'),
