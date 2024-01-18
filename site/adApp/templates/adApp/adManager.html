@@ -99,7 +99,7 @@
                 </div>
                 
                 <div class="name">
-                    <input type="text" id="advId" placeholder="광고주 ID">
+                    <input type="text" id="advName" placeholder="광고주 이름">
                 </div>
 
                 <div class="name">
@@ -137,7 +137,7 @@
         <select id="searchSelect">
             <option>검색타입</option>
             <option value="id">광고 ID</option>
-            <option value="adv_id">광고주 ID</option>
+            <option value="adv_name">광고주 이름</option>
             <option value="name">광고 제목</option>
             <option value="text">광고 내용</option>
             <option value="type">광고 타입</option>
@@ -159,15 +159,16 @@
             <article>
                 <link rel="stylesheet" href="{% static 'css/tableStyles.css' %}">
                 <!-- <link rel="stylesheet" href="../static/css/tableStyles.css"> -->
-                <table border="1">
+                <table id="adTable" border="1">
                     <tr>
-                        <th>idx</th>
-                        <th>title</th>
-                        <th>text</th>
-                        <th>Exposure datetime</th>
-                        <th>count</th>
-                        <th>regdate</th>
-                        <th>action</th>
+                        <th>ID</th>
+                        <th>제목</th>
+                        <th>URL</th>
+                        <th>노출기간</th>
+                        <th>타입</th>
+                        <th>가격</th>
+                        <th>광고주이름</th>
+                        <th></th>
                     </tr>
 <!--광고리스트 동적페이지-->                    
                     <script src="{% static 'js/adTable.js' %}"></script>
@@ -175,12 +176,16 @@
                     
 <!--detail 모달-->
                     <div id="detailContainer" class="hidden">
-                        <div id="detailContent">
-                            <p>DETAIL 구현해야합니다</p>
-                        
+                        <div id="detailContent">                            
+                            <script>
+                                document.write(`<input type="text" id="detailcontext" value="2" readonly/>`);
+                            </script>
+                            
+                            
+                            
                             <div class="name">
-                                <input type="button" class="detailC" id="detialOk" value="확인">
-                                <input type="button" class="detailC" id="detailCancel" value="취소">
+                                <input type="button" class="detailC" id="detailOk" value="확인">
+
                             </div>
                         </div>
                     </div>  
@@ -221,7 +226,7 @@
                             </div>
                                             
                             <div class="name">
-                                <input type="text" id="editAdvId" placeholder="광고주 ID">
+                                <input type="text" id="editAdvName" placeholder="광고주 이름">
                             </div>
             
                             <div class="name">

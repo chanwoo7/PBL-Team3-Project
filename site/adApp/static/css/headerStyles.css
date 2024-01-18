@@ -49,7 +49,7 @@
     margin: 0 auto;
 }
 
-#adType, #adUrl, #adTitle, #adText, #advId, #adPrice{
+#adType, #adUrl, #adTitle, #adText, #advName, #adPrice{
     width:280px;
     
     text-align: center;

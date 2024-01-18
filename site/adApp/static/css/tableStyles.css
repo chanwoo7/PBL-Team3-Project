@@ -46,7 +46,7 @@
     margin:0 auto;
 }
 
-#editAdType, #editAdUrl, #editAdTitle, #editAdText, #editAdvId, #editAdPrice{
+#editAdType, #editAdUrl, #editAdTitle, #editAdText, #editAdvName, #editAdPrice{
     width:280px;
     
     text-align: center;
@@ -58,4 +58,9 @@
     text-align: center;
     margin: 0 auto;
     text-align-last: center;
+}
+
+#detailContext{
+    width:30%;
+    height:50%
 }
