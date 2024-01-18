@@ -45,18 +45,35 @@ def delete_ad(request, ad_id):
 # 광고 검색
 @api_view(['GET'])
 def search_ads(request):
-    # Get parameters from the query string
-    ad_type = request.GET.get('ad_type', '')
+    search_type = request.GET.get('search_type', '')
     search_query = request.GET.get('search_query', '')
 
-    # Filter ads based on search criteria
-    ads = Ad.objects.filter(
-        Q(type__icontains=ad_type) | Q(name__icontains=search_query)
-    )
+    # 유효한 search_types 정의
+    valid_search_types = ['id', 'adv_id', 'name', 'type', 'text']
+
+    if search_type not in valid_search_types:
+        return Response({'error': 'Invalid search_type'}, status=status.HTTP_400_BAD_REQUEST)
+
+    ads = Ad.objects.all()
+
+    if search_query == '':
+        serializer = AdSerializer(ads, many=True)
+        return Response(serializer.data)
+
+    # search_type에 따라 필터링
+    if search_type == 'id':
+        ads = ads.filter(id=search_query)
+    elif search_type == 'adv_id':
+        ads = ads.filter(advId=search_query)
+    elif search_type == 'name':
+        ads = ads.filter(name__icontains=search_query)
+    elif search_type == 'type':
+        ads = ads.filter(type__icontains=search_query)
+    elif search_type == 'text':
+        ads = ads.filter(text__icontains=search_query)
 
     # Serialize the queryset
     serializer = AdSerializer(ads, many=True)
-
     return Response(serializer.data)
 
 
