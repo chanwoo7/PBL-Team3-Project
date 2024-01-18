@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Ad, Media
 from .serializers import AdSerializer, MediaSerializer
-from django.db.models import Q
 
 
 # 광고 생성
