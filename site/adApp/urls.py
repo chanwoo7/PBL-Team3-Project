@@ -9,6 +9,7 @@ urlpatterns = [
     path('api/edit_ad/<int:ad_id>/', api_views.edit_ad, name='edit_ad'),
     path('api/delete_ad/<int:ad_id>/', api_views.delete_ad, name='delete_ad'),
     path('api/search_ads/', api_views.search_ads, name='search_ads'),
+    path('api/get_all_ads/', api_views.get_all_ads, name='get_all_ads'),
     path('api/get_ad_details/<int:ad_id>/', api_views.get_ad_details, name='get_ad_details'),
     path('api/upload_media/', api_views.upload_media, name='upload_media'),
 

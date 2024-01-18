@@ -77,6 +77,15 @@ def search_ads(request):
     return Response(serializer.data)
 
 
+# 전체 광고 보기
+@api_view(['GET'])
+def get_all_ads(request):
+    ads = Ad.objects.all()
+
+    serializer = AdSerializer(ads, many=True)
+    return Response(serializer.data)
+
+
 # 광고 상세 보기
 @api_view(['GET'])
 def get_ad_details(request, ad_id):
