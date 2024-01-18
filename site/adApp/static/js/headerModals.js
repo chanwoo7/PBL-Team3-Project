@@ -12,37 +12,50 @@ ADDo.addEventListener('click', () => {
 })
 ADTo.addEventListener('click', () => {
     ADT.classList.remove('hidden');
-})
+})              
 
-document.getElementById('ADDok').addEventListener('click', () => {
+
+//add_ad
+ADDc[0].addEventListener('click', () => {
     ADD.classList.add('hidden');
-    alert();
+    alert("ADD OK!");
+
 
     let adType = document.getElementById('adType');
     adType = adType.options[adType.selectedIndex].text;
+    let adText = document.getElementById('adText').value;
     let adUrl = document.getElementById('adUrl').value;
+    let adFile = document.getElementById('adFile');
     let adName = document.getElementById('adTitle').value;
     let advId = document.getElementById('advId').value;
-    let editArray = {
+    let addArray = {
         "name": adName,
         "url": adUrl,
+        "text" : adText,
+        "content":btoa(adFile), //base64인코딩
         "type": adType,
         "start_time": document.querySelector('#adStartDate').value,
         "end_time": document.querySelector('#adEndDate').value,
         "adv_id": advId,
         "ad_price": document.getElementById('adPrice').value,
     };
-    console.log(editArray)
-    requestAPI('../api/add_ad/', 'POST',editArray)   
+    console.log(addArray)
+    requestAPI('../api/add_ad/', 'POST',addArray)   
 
     
         
     
 })
+
+//test API
 ADTc[0].addEventListener('click', () => {
     ADT.classList.add('hidden');
     
 })
+
+
+
+
 ADDc[1].addEventListener('click', () => {
     ADD.classList.add('hidden');
     
@@ -56,18 +69,18 @@ ADTc[1].addEventListener('click', () => {
 function requestAPI(url,met,jsonArray={}){
     const options = {
         method: met,
-        headers: {
-            "Content-Type": "application/json",
-        },
     };
-    if (met !== 'DELETE') {
+
+    if (met == 'POST' || met == 'PUT') {
+        options.headers = {"Content-Type": "application/json",};
         options.body = JSON.stringify(jsonArray);
     }
+    
 
     fetch(url, options)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            return data;
         })
         .catch(error => {
             console.error('Error :', error);
