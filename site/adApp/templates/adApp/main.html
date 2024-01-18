@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Centered and Clean Layout</title>
+<title>메인 페이지</title>
 <style>
     body, html {
         margin: 0;
@@ -56,44 +56,52 @@
         border: 1px solid #ccc;
         border-radius: 4px;
     }
+    .small-ad-banner {
+        width: 60%;
+        height: 100px; /* 배너의 높이 설정 */
+        background-color: #f7f3ea; /* 배너의 배경색 설정 */
+        margin: 20px 0; /* 검색 박스와의 간격 설정 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        line-height: 100px; /* 텍스트 수직 중앙 정렬을 위한 라인 높이 설정 */
+    }
     .container {
         display: flex;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
     }
     .image-box {
-        flex: 1 1 60%;
-        max-width: 60%;
+        flex: 1;
+        max-width: 100%;
         margin: 10px;
         text-align: center;
     }
     .ad-box {
         flex: 0 0 20%;
-        max-width: 200px;
         height: 600px;
-        background-color: #f3f3f3;
+        background-color: #f7f3ea;
         margin: 10px;
     }
     .bottom-ad-box{
         width: 100%;
-        height: 200px;
-        background-color: #ddd;
+        height: 300px; /* 배너의 높이를 늘림 */
+        background-color: rgb(247, 243, 234); /* 배경색 변경 */
+        color: #0b0000; /* 텍스트 색상 변경 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        line-height: 300px; /* 라인 높이 조정 */
+        border-top: 4px solid rgba(243, 243, 243, 0.19); /* 상단 테두리 추가 */
         margin-top: 20px;
     }
-
     .image-box img {
-        max-width: 100%;
+        width: 100%;
         height: auto;
+        max-width: 100%;
     }
-
-    /* 첫 번째 광고 박스의 왼쪽 여백 제거 */
-    .container > aside:first-child {
-        margin-left: 0;
-    }
-
-</style>
+    </style>
 </head>
 <body>
     <header class="menu">
@@ -111,19 +119,25 @@
         <input type="text" placeholder="검색어">
         <input type="button" value="검색">
     </div>
+    <aside class="small-ad-banner">
+        <!-- 작은 광고 배너 내용 -->
+        <p>광고</p>
+    </aside>
     <main class="container">
         <aside class="ad-box">
-            <!-- 광고 콘텐츠를 여기에 넣습니다. -->
+            <!-- 왼쪽 광고 콘텐츠 -->
+            <p>광고</p>
         </aside>
         <section class="image-box">
             <img src="/static/image/comDev.avif" alt="Computer Development">
         </section>
         <aside class="ad-box">
-            <!-- 광고 콘텐츠를 여기에 넣습니다. -->
+            <!-- 오른쪽 광고 콘텐츠 -->
+            <p>광고</p>
         </aside>
     </main>
     <div class="bottom-ad-box">
-        <!-- 광고 콘텐츠를 여기에 넣습니다. -->
+        <p>광고</p>
     </div>
 </body>
 </html>
