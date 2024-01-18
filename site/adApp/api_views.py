@@ -49,7 +49,7 @@ def search_ads(request):
     search_query = request.GET.get('search_query', '')
 
     # 유효한 search_types 정의
-    valid_search_types = ['id', 'adv_id', 'name', 'type', 'text']
+    valid_search_types = ['id', 'adv_name', 'name', 'type', 'text']
 
     if search_type not in valid_search_types:
         return Response({'error': 'Invalid search_type'}, status=status.HTTP_400_BAD_REQUEST)
@@ -63,8 +63,8 @@ def search_ads(request):
     # search_type에 따라 필터링
     if search_type == 'id':
         ads = ads.filter(id=search_query)
-    elif search_type == 'adv_id':
-        ads = ads.filter(advId=search_query)
+    elif search_type == 'adv_name':
+        ads = ads.filter(adv_name__icontains=search_query)
     elif search_type == 'name':
         ads = ads.filter(name__icontains=search_query)
     elif search_type == 'type':
