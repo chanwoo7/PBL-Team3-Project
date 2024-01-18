@@ -1,0 +1,350 @@
+[33mcommit 1151c64b4a633b9461975706057c55897b892491[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: hbgraph <hbgraph@naver.com>
+Date:   Thu Jan 18 14:07:20 2024 +0900
+
+    main.html 수정2
+
+[33mcommit acb838b5b76bd421c384f6e7a4e17d0deb1776b9[m
+Merge: f6ec675 38d726b
+Author: hbgraph <hbgraph@naver.com>
+Date:   Thu Jan 18 14:06:59 2024 +0900
+
+    Merge remote-tracking branch 'origin/main'
+
+[33mcommit f6ec675fd049137ce8ad94f71dc7608e3b663b2f[m
+Author: hbgraph <hbgraph@naver.com>
+Date:   Thu Jan 18 14:02:11 2024 +0900
+
+    main.html 수정2
+
+[33mcommit 38d726b2ea36d3d8f50a52f379f20e825776a994[m
+Author: jun <jyoung66130@naver.com>
+Date:   Thu Jan 18 13:44:17 2024 +0900
+
+    Ad 모델 target_age, target_gender 필드 추가
+
+[33mcommit 4f4944b23ae16ba0e788f9b85850a845b4d2414d[m
+Merge: c43adfb 23de733
+Author: 최승환04 <134260668+raxNone@users.noreply.github.com>
+Date:   Thu Jan 18 11:36:29 2024 +0900
+
+    Merge pull request #2 from chanwoo7/front_develop
+    
+    search, add, detail, edit, del 기능 구현했습니다.
+    OK
+
+[33mcommit c43adfbf069d6647fb8afa53b283b08291edce79[m
+Author: jun <jyoung66130@naver.com>
+Date:   Thu Jan 18 11:34:35 2024 +0900
+
+    text 추가 후 migrate
+
+[33mcommit 23de73367e714173ec043c22232bd74df10d98d9[m[33m ([m[1;31morigin/front_develop[m[33m)[m
+Author: raxNone <dryou04@kookmin.ac.kr>
+Date:   Thu Jan 18 11:34:27 2024 +0900
+
+    search, add, detail, edit, del 기능 구현했습니다.
+
+[33mcommit be8dd794c7d19a6173dadcac37e987d68a65483a[m
+Author: jun <jyoung66130@naver.com>
+Date:   Thu Jan 18 11:23:27 2024 +0900
+
+    Ad 모델 text 필드 추가
+
+[33mcommit e04071f390a7c23bcd1dd8237e6fa2dd5a8c357a[m
+Merge: 79442fb 69d71b9
+Author: jun <jyoung66130@naver.com>
+Date:   Thu Jan 18 11:01:31 2024 +0900
+
+    Merge branch 'main' of https://github.com/chanwoo7/PBL-Team3-Project
+
+[33mcommit 79442fb45e892b1d8861d2a8c0e3a27bd662f669[m
+Author: jun <jyoung66130@naver.com>
+Date:   Thu Jan 18 11:00:51 2024 +0900
+
+    media 테이블 수정
+
+[33mcommit f0a72d2701d373c569e4c783cbdc6c075e5274d6[m
+Author: jun <jyoung66130@naver.com>
+Date:   Thu Jan 18 10:59:26 2024 +0900
+
+    models.py 수정
+
+[33mcommit 69d71b9bccaf067e49012e0aa979516cce010703[m
+Merge: 27d1e96 44cb268
+Author: manin <107978452+yycosmo@users.noreply.github.com>
+Date:   Thu Jan 18 10:48:51 2024 +0900
+
+    Merge pull request #1 from chanwoo7/style/ad_manager
+    
+    adManager -> ad_manager로 수정 및 가독성을 위한 빈 줄 추가
+
+[33mcommit 44cb26890b219a2d572d6448f883d37398c8101a[m[33m ([m[1;31morigin/style/ad_manager[m[33m)[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Thu Jan 18 10:46:41 2024 +0900
+
+    adManager -> ad_manager로 수정 및 가독성을 위한 빈 줄 추가
+
+[33mcommit 27d1e96ba914031ab2ff240b4fd0829b30303ca5[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Thu Jan 18 10:35:26 2024 +0900
+
+    MediaTest -> Media로 수정
+
+[33mcommit b8725d34c719e603569f3fa73aa00c3285e5ccaa[m
+Author: raxNone <dryou04@kookmin.ac.kr>
+Date:   Wed Jan 17 21:53:09 2024 +0900
+
+    ADD, edit, del API 구현(ADD,edit은 수정 필요)
+
+[33mcommit 7fc97fca206483b3ccc45cecce5fac5449b72640[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Wed Jan 17 21:01:08 2024 +0900
+
+    upload_media, show_media API 생성
+
+[33mcommit 90f7b4a0324c3fc7e7fd70f8df181c845b98f6c8[m
+Author: hbgraph <hbgraph@naver.com>
+Date:   Wed Jan 17 20:59:38 2024 +0900
+
+    main.html 수정
+
+[33mcommit ae87ea3b3076892a3bdb72f2c67cc37747d7ec41[m
+Author: hbgraph <hbgraph@naver.com>
+Date:   Wed Jan 17 20:53:49 2024 +0900
+
+    main.html 수정
+
+[33mcommit 62123fe2ff00524d4cf91f744dd20cffcc187ea7[m
+Author: jun <jyoung66130@naver.com>
+Date:   Wed Jan 17 20:19:41 2024 +0900
+
+    미디어 file 필드 blank 옵션 수정
+
+[33mcommit 9f705d8518f433b24d3ce886bb727a0886a22136[m
+Author: jun <jyoung66130@naver.com>
+Date:   Wed Jan 17 20:06:37 2024 +0900
+
+    미디어 테스트 추가요소 작성
+
+[33mcommit d1870a76033d99cabca014c3e5281471aa12fb73[m
+Author: jun <jyoung66130@naver.com>
+Date:   Wed Jan 17 19:41:00 2024 +0900
+
+    models.py DateTimeField를 DateField로 변경
+
+[33mcommit 7c600f6ea699277a532ff7e3d4c2027543c50d10[m
+Author: jun <jyoung66130@naver.com>
+Date:   Wed Jan 17 19:35:25 2024 +0900
+
+    models.py 미디어 테스트 테이블 작성
+
+[33mcommit a21b8dc74f8a52ea7161c12fe168d7294da9eca9[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Wed Jan 17 13:50:13 2024 +0900
+
+    add_ad, edit_ad, delete_ad, search_ads, get_ad_details API 생성
+
+[33mcommit 65ef63653c7604b48e97ec9030ec589912b1bd50[m
+Author: raxNone <dryou04@kookmin.ac.kr>
+Date:   Wed Jan 17 13:48:23 2024 +0900
+
+    modal창 뼈대 완성
+
+[33mcommit adf130d02f7b055c04b68e1077fc717bf3f20412[m
+Author: jun <jyoung66130@naver.com>
+Date:   Wed Jan 17 12:50:19 2024 +0900
+
+    models.py 수정
+
+[33mcommit ec974a214e7b8177658c7a9ecb64e05e5d379152[m
+Author: raxNone <dryou04@kookmin.ac.kr>
+Date:   Wed Jan 17 11:24:17 2024 +0900
+
+    모달창 오류 수정
+
+[33mcommit aa13f8de808af88219f567cf5e9d91f904fd2650[m
+Author: raxNone <dryou04@kookmin.ac.kr>
+Date:   Wed Jan 17 11:22:13 2024 +0900
+
+    static 오류 수정
+
+[33mcommit 301b8bcd6f5b600356d8843595b8c54efca27d4d[m
+Author: raxNone <dryou04@kookmin.ac.kr>
+Date:   Wed Jan 17 10:45:19 2024 +0900
+
+    css, js 연동
+
+[33mcommit 574d95f4090321981b3d2fd35851455fde156e5d[m
+Author: jun <jyoung66130@naver.com>
+Date:   Wed Jan 17 09:59:59 2024 +0900
+
+    models.py 모델 추가 정의
+
+[33mcommit 07e4c06ea5909b3cea497d36f8f2cc35605e2b6b[m
+Author: raxNone <dryou04@kookmin.ac.kr>
+Date:   Wed Jan 17 03:32:59 2024 +0900
+
+    adManager.html 기능 추가 및 UI 수정
+
+[33mcommit 56c88659ade29f68239a2ad8c88805235f4b2c2c[m
+Author: hbgraph <hbgraph@naver.com>
+Date:   Tue Jan 16 11:58:27 2024 +0900
+
+    adManager.html 생성
+
+[33mcommit 05b27a05ec7f629798f3d62418513f509a39e037[m
+Author: raxNone <dryou04@kookmin.ac.kr>
+Date:   Tue Jan 16 11:47:47 2024 +0900
+
+    adManger페이지 생성
+
+[33mcommit 804605719023b4281fb97a3c6b5f658177984081[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Tue Jan 16 11:37:52 2024 +0900
+
+    serializers.py 생성
+
+[33mcommit 51ccf9b110b0566c4022aec3fc326fea1a141d4e[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Tue Jan 16 11:37:08 2024 +0900
+
+    requirements.txt 작성
+
+[33mcommit 45da9fb2e141b4dccfbd31ac3019daf93b324435[m
+Author: jun <jyoung66130@naver.com>
+Date:   Tue Jan 16 10:21:48 2024 +0900
+
+    django 관리자 설정 및 admin.py 모델 정보 추가
+
+[33mcommit d5f63387215c02c7e64ac99574c6829d9959e510[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Mon Jan 15 18:50:45 2024 +0900
+
+    my_settings.py 생성
+
+[33mcommit c82f5ad43754ea2ded6f09339349d302f6a16797[m
+Author: raxNone <dryou04@kookmin.ac.kr>
+Date:   Mon Jan 15 17:36:05 2024 +0900
+
+    adApp/templates/adApp/main.html 업로드 및 urls.py 수정
+
+[33mcommit 18c44309ff8ccbd5aeabdd8a3a56e1935e5f2b0c[m
+Author: jun <jyoung66130@naver.com>
+Date:   Mon Jan 15 17:19:17 2024 +0900
+
+    settings.py db 유저, ip 정보 수정
+
+[33mcommit 5c375b6e2c9b9423682ac72b69571e5ffcc9e97b[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Mon Jan 15 17:17:33 2024 +0900
+
+    settings.py 숨김 수정
+
+[33mcommit 2c55be0442a10036f5635c2ee57e6890577f299d[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Mon Jan 15 17:07:49 2024 +0900
+
+    settings.py 숨김
+
+[33mcommit 8fd1f6e4bd781c23fe8f774aa235def0e0b546d6[m
+Author: jun <jyoung66130@naver.com>
+Date:   Mon Jan 15 15:57:41 2024 +0900
+
+    models.py 모델 정의 및 migration
+
+[33mcommit 6cdab517cfa8f63e659bbcaddf064162e3ed4c9d[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Mon Jan 15 14:43:00 2024 +0900
+
+    .gitignore에 *.pyc, __pycache__ 추가 및 캐시 파일 재삭제
+
+[33mcommit 0aa893b60fb2501e1be81a65e3dbacbcbaa148ef[m
+Author: jun <jyoung66130@naver.com>
+Date:   Mon Jan 15 14:27:53 2024 +0900
+
+    settings.py에 mysql 설정 추가
+
+[33mcommit 598554ddfa1c02010bc240970bd099759e41ccdb[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Mon Jan 15 14:09:45 2024 +0900
+
+    .gitignore에 *.pyc, __pycache__ 추가 및 캐시 파일 삭제
+
+[33mcommit e8a3d2858f0e2d0965b3455d136f3f02543efe1d[m
+Author: hbgraph <hbgraph@naver.com>
+Date:   Mon Jan 15 14:03:46 2024 +0900
+
+    adApp 파일에 urls.py 추가, config 파일의 urls.py 수정
+
+[33mcommit d52c2319e11b7b187cf865abfab2faeecdb5ddb6[m
+Author: hbgraph <hbgraph@naver.com>
+Date:   Mon Jan 15 13:45:42 2024 +0900
+
+    urls.py 수정
+
+[33mcommit 7fc95179ebbdf3517f79cd72baedcad9b0bcb29e[m
+Author: hbgraph <hbgraph@naver.com>
+Date:   Mon Jan 15 13:36:15 2024 +0900
+
+    hello world 완성
+
+[33mcommit 14c4ffd0fd185d1134e1d3d2606be42f29d58257[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Mon Jan 15 13:21:18 2024 +0900
+
+    adApp 생성
+
+[33mcommit b45509788cdb028fefd2844cebba01d35c213c54[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Mon Jan 15 11:47:03 2024 +0900
+
+    언어 및 시간 설정
+
+[33mcommit 11ae28700e3edb9df44626bab876b20ef0c5cd15[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Mon Jan 15 11:35:23 2024 +0900
+
+    프로젝트 디렉토리 생성
+
+[33mcommit 937431ebc46f23255ae220df664e576875099cc3[m
+Author: chanwoo7 <chanwoo9987@gmail.com>
+Date:   Mon Jan 15 11:15:10 2024 +0900
+
+    .gitignore 추가
+
+[33mcommit 29cba64cea73ee69a8f86bcd3ed13e3485967eef[m
+Author: hbgraph <hbgraph@naver.com>
+Date:   Mon Jan 15 11:01:09 2024 +0900
+
+    파일 삭제
+
+[33mcommit 9e1c72193fd23d987fb50cfaa857c375d517945a[m
+Author: hbgraph <hbgraph@naver.com>
+Date:   Mon Jan 15 10:56:58 2024 +0900
+
+    수정2
+
+[33mcommit 9fc9b24ad0b111bd00be21bb4d8e72c5adcbcdac[m
+Author: hbgraph <hbgraph@naver.com>
+Date:   Mon Jan 15 10:54:21 2024 +0900
+
+    수정1
+
+[33mcommit 30096103e1250ebec64927aa8c0591b04efe1977[m
+Author: hbgraph <hbgraph@naver.com>
+Date:   Mon Jan 15 10:51:23 2024 +0900
+
+    helloworld
+
+[33mcommit e5bba2d3d74a610fd008b47b70986d3a523ab851[m
+Author: chanwoo7 <95745646+chanwoo7@users.noreply.github.com>
+Date:   Mon Jan 15 10:19:28 2024 +0900
+
+    Update README.md
+
+[33mcommit afdfaf1d96437a45b3b94375ad2143a01a339246[m
+Author: chanwoo7 <95745646+chanwoo7@users.noreply.github.com>
+Date:   Mon Jan 15 10:16:10 2024 +0900
+
+    Initial commit

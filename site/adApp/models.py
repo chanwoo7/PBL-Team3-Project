@@ -9,12 +9,20 @@ from django.conf import settings
 class Adv(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=20)
-    location = models.CharField(max_length=50, blank=True)
+    location = models.CharField(max_length=50)
     verified = models.BooleanField(default=False)
 
 
 # 광고
 class Ad(models.Model):
+    # 열거형 첫 번째는 db 저장 값. 쿼리 및 결과 출력에 사용
+    # 열거형 두 번째는 폼에 보이는 값
+    # TYPE_CHOICES = [
+    #     ('image', '사진'),
+    #     ('video', '영상'),
+    #     ('banner', '배너'),
+    # ]
+
     TARGET_GENDER_CHOICES = [
         ('남', '남성'),
         ('여', '여성'),
@@ -24,13 +32,13 @@ class Ad(models.Model):
     id = models.AutoField(primary_key=True)
     adv_id = models.ForeignKey(Adv, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
-    text = models.CharField(blank=True, max_length=100)
+    text = models.CharField(max_length=100)
     url = models.CharField(max_length=500)
     type = models.CharField(max_length=10)
     start_time = models.DateField()
     end_time = models.DateField()
-    ad_price = models.IntegerField(default=0)
-    target_age = models.IntegerField(blank=True, default=0)
+    ad_price = models.IntegerField()
+    target_age = models.IntegerField()
     target_gender = models.CharField(max_length=2, choices=TARGET_GENDER_CHOICES, default='없음')
 
 
@@ -59,7 +67,7 @@ class Media(models.Model):
     id = models.AutoField(primary_key=True)
     ad_id = models.ForeignKey(Ad, on_delete=models.CASCADE)
     file = models.FileField(upload_to='ad')
-    desc = models.CharField(blank=True, max_length=20)
+    desc = models.CharField(max_length=20)
 
     def delete(self, *args, **kwargs):
         super(Media, self).delete(*args, **kwargs)
