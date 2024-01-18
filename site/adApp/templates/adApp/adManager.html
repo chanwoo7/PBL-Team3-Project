@@ -9,20 +9,69 @@
         .container {
             text-align: center;
         }
-        section{
-            line-height: 10px; 
+        .outer-container {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            min-height: 565px;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .box {
-          display: inline-block; /* 인라인 블록 요소로 배치 */
-          width: 100px; /* 원하는 너비 설정 */
-          height: 100px; /* 원하는 높이 설정 */
-          margin: 10px; /* 각 상자 사이의 간격 설정 */
-          text-align: center; /* 내부 텍스트 가로 정렬을 위해 사용 */
-          line-height: 100px; /* 세로 정렬을 위해 사용 */
-        }
-        .pagination-box {
-            display: inline-block;
+        .detail-modal {
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: deepskyblue;
+            color: white;
+            width: 90%;
             text-align: center;
+            overflow: hidden;
+        }
+        .detail-modal .api-section {
+            background-color: #ffffff;
+            color: black;
+        }
+        .detail-modal p {
+            color: black;
+        }
+        .select-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .select-container select,
+        .select-container input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            line-height: normal;
+            height: auto;
+        }
+
+        .select-container select {
+            padding: 10px 10px;
+        }
+
+        .select-container select:first-child,
+        .select-container input:first-child {
+            margin-top: 0;
+        }
+        .scrollable-list {
+            width: 300px;
+            height: 150px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+        }
+
+        section{
+            line-height: 10px;
         }
         body {
             font-family: Arial, sans-serif;
@@ -46,12 +95,12 @@
         }
         .name{
             display:flex;
-            
+
         }
 
     </style>
 
-    
+
 </head>
 <body>
 
@@ -115,11 +164,40 @@
 
     <!--AD Test 모달-->
         <div id="ADTcontainer" class="hidden">
-            <div id="ADTcontent">
-                <p>AD Test구현해야해용</p>
-                <div class="name">
-                    <input type="button" class="ADTc" id="ADTok" value="확인">
-                    <input type="button" class="ADTc" id="ADTcancel" value="취소">
+            <div id="ADTcontent" class="outer-container">
+                <div class="detail-modal">
+                        <p>Target</p>
+                        <div class="select-container">
+                               <select id="editAdType" style="margin-bottom: 10px">
+                                   <option>Service</option>
+                               </select>
+                               <input type="text" id="testMemberId" placeholder="Test Member ID" style="margin-bottom: 10px">
+                               <input type="text" id="studentID" placeholder="20230623" style="margin-bottom: 10px">
+                               <button style="background-color: #6df76d; border-color: black">전송</button>
+                        </div>
+                </div>
+<!--                        <div class="name">-->
+<!--                            <input type="button" class="ADTc" id="ADTok" value="확인">-->
+<!--                            <input type="button" class="ADTc" id="ADTcancel" value="취소">-->
+<!--                        </div>-->
+                <div class="detail-modal">
+                        <p>Result</p>
+                        <div class="scrollable-list">
+                            <ul>
+                                <div class="api-section">
+                                    API Name: <br>
+                                    Timestamp <br>
+                                    Result :( <br>
+                                    ... <br>
+                                    ) <br>
+                                    content 1 <br>
+                                    content 2 <br>
+                                    content 3<br>
+                                </div>
+                            </ul>
+                        </div>
+                        <button style="background-color: yellow; border-color: black">Web View</button>
+                        <button style="background-color: #6df76d; border-color: black">확인</button>
                 </div>
             </div>
         </div>
@@ -177,14 +255,13 @@
                     <div id="detailContainer" class="hidden">
                         <div id="detailContent">
                             <p>DETAIL 구현해야합니다</p>
-                        
+
                             <div class="name">
                                 <input type="button" class="detailC" id="detialOk" value="확인">
                                 <input type="button" class="detailC" id="detailCancel" value="취소">
                             </div>
                         </div>
-                    </div>  
-
+                    </div>
 <!--edit 모달-->                    
                     <div id="editContainer" class="hidden">
                         <div id="editContent">
