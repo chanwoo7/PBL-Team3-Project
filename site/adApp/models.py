@@ -45,15 +45,15 @@ class User(models.Model):
     # 필요 시 추가
 
 
-# 미디어 테스트 테이블
-class MediaTest(models.Model):
+# 미디어
+class Media(models.Model):
     file = models.FileField(upload_to='ad')
     desc = models.CharField(blank=True, max_length=20)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
 
     def delete(self, *args, **kwargs):
-        super(MediaTest, self).delete(*args, **kwargs)
+        super(Media, self).delete(*args, **kwargs)
         os.remove(os.path.join(settings.MEDIA_ROOT, self.file.path))
 
 

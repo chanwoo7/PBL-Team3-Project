@@ -3,8 +3,8 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Ad, MediaTest
-from .serializers import AdSerializer, MediaTestSerializer
+from .models import Ad, Media
+from .serializers import AdSerializer, MediaSerializer
 from django.db.models import Q
 
 
@@ -73,7 +73,7 @@ def get_ad_details(request, ad_id):
 @api_view(['POST'])
 def upload_media(request):
     if request.method == 'POST':
-        serializer = MediaTestSerializer(data=request.data)
+        serializer = MediaSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -83,6 +83,6 @@ def upload_media(request):
 # 광고 파일 띄우기
 @api_view(['GET'])
 def show_media(request, media_id):
-    media = get_object_or_404(MediaTest, pk=media_id)
+    media = get_object_or_404(Media, pk=media_id)
     file_path = media.file.path
     return FileResponse(open(file_path, 'rb'))

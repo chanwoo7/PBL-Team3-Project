@@ -14,8 +14,8 @@ class AdSerializer(ModelSerializer):
         fields = '__all__'
 
 
-class MediaTestSerializer(ModelSerializer):
+class MediaSerializer(ModelSerializer):
     class Meta:
-        model = MediaTest
+        model = Media
         fields = '__all__'
 

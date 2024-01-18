@@ -12,7 +12,7 @@ admin.site.register(Adv)
 admin.site.register(Ad)
 admin.site.register(AdAnlz)
 admin.site.register(User)
-# admin.site.register(MediaTest)
+# admin.site.register(Media)
 # ------------------------------ #
 
 
@@ -21,7 +21,7 @@ admin.site.register(User)
 from django.utils.safestring import mark_safe
 
 
-@admin.register(MediaTest)
+@admin.register(Media)
 class POSTAdmin(admin.ModelAdmin):
     list_display = ['id', 'file_tag', 'desc', 'created_at', 'updated_at']
     list_display_links = ['desc']
