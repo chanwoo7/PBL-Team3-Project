@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Ad, Media
+from .models import Adv, Ad, Media
 from .serializers import AdSerializer, MediaSerializer
 
 
@@ -13,6 +13,11 @@ def add_ad(request):
     if request.method == 'POST':
         serializer = AdSerializer(data=request.data)
         if serializer.is_valid():
+            # new adv 추가
+            adv_name = serializer.validated_data['adv_name']
+            if not Adv.objects.filter(name=adv_name).exists():
+                new_adv = Adv(name=adv_name)
+                new_adv.save()
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
