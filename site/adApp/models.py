@@ -12,7 +12,7 @@ class Ad(models.Model):
 
     # TYPE_CHOICES = [
     #     ('image', '사진'),
-    #     ('video', '영상'),
+    #     ('video', '동영상'),
     #     ('banner', '배너'),
     # ]
     TARGET_GENDER_CHOICES = [
@@ -50,7 +50,7 @@ class Media(models.Model):
 class Adv(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=20)
-    location = models.CharField(max_length=50)
+    location = models.CharField(blank=True, max_length=50)
     verified = models.BooleanField(default=False)
 
 
