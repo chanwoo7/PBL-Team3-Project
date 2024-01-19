@@ -1,8 +1,8 @@
-
+function call(){
 let detailO = document.getElementsByClassName('detailO');
 let editO = document.getElementsByClassName('editO');
 let delO = document.getElementsByClassName('delO');
-console.log(detailO)
+
 let detailC = document.getElementById('detailOk'); 
 let editC = document.getElementsByClassName('editC');// 0:확인, 1:취소
 let delC = document.getElementsByClassName('delC');
@@ -24,9 +24,12 @@ for(let i=0; i<detailO.length; i++){
         
         detail.classList.remove('hidden');
         var adId=adIdL[i];
+        
+        let response;
+        requestAPI2('../api/get_ad_details/'+adId+'/',"GET")
+        .then(r => {console.log(r)})
 
-        var response = requestAPI2('../api/get_ad_details/'+adId+'/',"GET")
-        console.log(response)
+
     });
     editO[i].addEventListener('click', () =>{
         edit.classList.remove('hidden');
@@ -104,9 +107,11 @@ function requestAPI2(url,met,jsonArray={}){
     fetch(url, options)
         .then(response => response.json())
         .then(data => {
+            
             return data;
         })
         .catch(error => {
             console.error('Error :', error);
         });
+}
 }

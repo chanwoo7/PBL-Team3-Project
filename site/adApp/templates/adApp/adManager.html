@@ -260,7 +260,7 @@
                         <th>비용</th>
                         <th>광고주</th>
                     </tr>
-<!--광고리스트 동적페이지-->
+<!--광고리스트 틀-->
                     <script src="{% static 'js/adTable.js' %}"></script>
                     
                     
@@ -343,20 +343,24 @@
             </article>
         </div>
 
-            <footer>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-                      
-                      <li class="page-item"><span class="page-link" onclick="pageNum=1;reloadTable(pageNum).then(DDD())">1</span></li>
-                      <li class="page-item"><span class="page-link" onclick="pageNum=2;reloadTable(pageNum).then(DDD())">2</span></li>
-                      <li class="page-item"><span class="page-link" onclick="pageNum=3;reloadTable(pageNum).then(DDD())">3</span></li>
-                      <script src="{% static 'js/adTableModals.js' %}" ></script>
-
-                    </ul>
-                  </nav>
-            </footer>
         
     </section>
+<button onclick="call()">오류 해결버튼</button>
+    <footer>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              
+              <li class="page-item"><span class="page-link" onclick="pageNum=1;reloadTable(pageNum)">1</span></li>
+              <li class="page-item"><span class="page-link" onclick="pageNum=2;reloadTable(pageNum)">2</span></li>
+              <li class="page-item"><span class="page-link" onclick="pageNum=3;reloadTable(pageNum)">3</span></li>
+              <li class="page-item"><span class="page-link" onclick="pageNum=4;reloadTable(pageNum)">4</span></li>
+              <li class="page-item"><span class="page-link" onclick="pageNum=5;reloadTable(pageNum)">5</span></li>
+              <li class="page-item"><span class="page-link" onclick="pageNum=6;reloadTable(pageNum)">6</span></li>
+              <li class="page-item"><span class="page-link" onclick="pageNum=7;reloadTable(pageNum)">7</span></li>
+              
 
+            </ul>
+          </nav>
+    </footer>
 </body>
 </html>
