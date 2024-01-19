@@ -109,6 +109,10 @@
             padding:1px;
             justify-content: center;
         }
+        textarea{
+            height:250px;
+            line-height:20px;
+        }
        
 
     </style>
@@ -267,11 +271,11 @@
 <!--detail 모달-->
                     <div id="detailContainer" class="hidden">
                         <div id="detailContent">
-                            <p>DETAIL 구현해야합니다</p>
+                            <textarea id="detailPage">DETAIL 구현해야합니다</textarea>
 
                             <div class="name">
                                 <input type="button" class="detailC" id="detailOk" value="확인">
-                                <input type="button" class="detailC" id="detailCancel" value="취소">
+                                
                             </div>
                         </div>
                     </div>
@@ -307,11 +311,11 @@
                             <div class="name">
                                 <input type="date" id="editAdStartDate" min="2024-01-17" value="2024-01-17">
                                <p>~</p>
-                                <input type="date" id="adEndDate" min="2024-01-18" value="2024-01-18">
+                                <input type="date" id="editAdEndDate" min="2024-01-18" value="2024-01-18">
                             </div>
 
                             <div class="name">
-                                <input type="text" id="editAdvId" placeholder="광고주 ID">
+                                <input type="text" id="editAdvName" placeholder="광고주 이름">
                             </div>
             
                             <div class="name">

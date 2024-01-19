@@ -15,7 +15,6 @@ let del = document.getElementById('delContainer');
 
 
 
-
 // 각 광고 버튼 이벤트 - adId 설정
 for(let i=0; i<detailO.length; i++){    
     // get_ad_details API
@@ -23,21 +22,18 @@ for(let i=0; i<detailO.length; i++){
     detailO[i].addEventListener('click', () =>{
         
         detail.classList.remove('hidden');
-        var adId=adIdL[i];
+        var adId=adIdL[i+5*(pageNum-1)];
         
-        let response;
-        requestAPI2('../api/get_ad_details/'+adId+'/',"GET")
-        .then(r => {console.log(r)})
-
-
+        requestAPI2('../api/get_ad_details/' + adId + '/', "GET")
+        
     });
     editO[i].addEventListener('click', () =>{
         edit.classList.remove('hidden');
-        adId=adIdL[i];
+        adId=adIdL[i+5*(pageNum-1)];
     });
     delO[i].addEventListener('click', () =>{
         del.classList.remove('hidden');
-        adId=adIdL[i];
+        adId=adIdL[i+5*(pageNum-1)];
     });
 }
 
@@ -53,10 +49,9 @@ editC[0].addEventListener('click', () =>{
     edit.classList.add('hidden');
 
     alert("Edit OK!");
-
     let adType = document.getElementById('editAdType');
     adType = adType.options[adType.selectedIndex].text;
-    let adText = document.getElementById('editAdText');
+    let adText = document.getElementById('editAdText').value;
     let adUrl = document.getElementById('editAdUrl').value;
     let adFile = document.getElementById('editAdFile');
     let adName = document.getElementById('editAdTitle').value;
@@ -68,8 +63,8 @@ editC[0].addEventListener('click', () =>{
         "content":btoa(adFile),
         "type": adType,
         "start_time": document.getElementById('editAdStartDate').value,
-        "end_time": document.getElementById('editAdEndTime').value,
-        "adv_id": advName,
+        "end_time": document.getElementById('editAdEndDate').value,
+        "adv_name": advName,
         "ad_price": document.getElementById('editAdPrice').value,
     };
     requestAPI('../api/edit_ad/'+adId+'/', 'PUT',editArray)
@@ -107,11 +102,14 @@ function requestAPI2(url,met,jsonArray={}){
     fetch(url, options)
         .then(response => response.json())
         .then(data => {
-            
+            console.log(data)
+
+
+            document.getElementById('detailPage').innerHTML = JSON.stringify(data,null,2);
             return data;
         })
-        .catch(error => {
-            console.error('Error :', error);
-        });
+        // .catch(error => {
+        //     console.error('Error :', error);
+        // });
 }
 }
