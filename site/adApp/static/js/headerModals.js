@@ -10,9 +10,9 @@ const ADT = document.getElementById('ADTcontainer');
 ADDo.addEventListener('click', () => {
     ADD.classList.remove('hidden');
 })
-ADTo.addEventListener('click', () => {
-    ADT.classList.remove('hidden');
-})              
+// ADTo.addEventListener('click', () => {
+//     ADT.classList.remove('hidden');
+// })              
 
 
 //add_ad
@@ -48,10 +48,10 @@ ADDc[0].addEventListener('click', () => {
 })
 
 //test API
-ADTc[0].addEventListener('click', () => {
-    ADT.classList.add('hidden');
+// ADTc[0].addEventListener('click', () => {
+//     ADT.classList.add('hidden');
     
-})
+// })
 
 
 
@@ -60,10 +60,10 @@ ADDc[1].addEventListener('click', () => {
     ADD.classList.add('hidden');
     
 })
-ADTc[1].addEventListener('click', () => {
-    ADT.classList.add('hidden');
+// ADTc[1].addEventListener('click', () => {
+//     ADT.classList.add('hidden');
     
-})
+// })
 
 
 function requestAPI(url,met,jsonArray={}){
