@@ -10,9 +10,10 @@ const ADT = document.getElementById('ADTcontainer');
 ADDo.addEventListener('click', () => {
     ADD.classList.remove('hidden');
 })
-// ADTo.addEventListener('click', () => {
-//     ADT.classList.remove('hidden');
-// })              
+ADTo.addEventListener('click', () => {
+    
+    ADT.classList.remove('hidden');
+})              
 
 
 //add_ad
