@@ -29,12 +29,12 @@ search.addEventListener('click',()=>{
         adEndDateL.push(ad.end_time);
         adPriceL.push(ad.ad_price);
         advNameL.push(ad.adv_name);
-        adTypeL.push(ad.adTypeL)
+        adTypeL.push(ad.type)
 
         
 
         });
-
+        pageNum=1;
         reloadTable(pageNum);
     }
     
@@ -50,8 +50,9 @@ function reloadTable(pageNum){
     for (let idx=5*(pageNum-1); idx<5*pageNum; idx++){
         let isbr = idx===5*pageNum ? "" : "<br>";
     
-    trTag = document.getElementById("adTable").getElementsByTagName("tr")[idx+1]
-    for(let i=0; i<7; i++){
+    trTag = document.getElementById("adTable").getElementsByTagName("tr")[idx%5+1]
+    for(let i=0; i<7; i++){pageNum=1;
+
         
         trTag.getElementsByTagName("th")[0].innerHTML = adIdL[idx] ?? '-';
         trTag.getElementsByTagName("th")[1].innerHTML = adNameL[idx] ?? '-';

@@ -3,8 +3,12 @@
 <head>
     <meta charset = "UTF-8">
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    
     <title>AD Manager Platform</title>
     {% load static %}
+    
     <style>
         .container {
             text-align: center;
@@ -73,17 +77,17 @@
         section{
             line-height: 10px;
         }
-        body {
-            font-family: Arial, sans-serif;
-        }
+        
         header, footer {
+            
             background-color: rgba(11, 0, 0, 0.58);
             color: white;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
+            margin: 0 auto;
         }
         section {
-            display: flex;
+            margin: 0 auto;
         }
         article, aside {
             border: 1px;
@@ -95,19 +99,26 @@
         }
         .name{
             display:flex;
-
+            
         }
+        footer{
+            position: fixed;
+            bottom:0;
+            width:100%;
+            padding:10px;
+        }
+       
 
     </style>
 
-
+    
 </head>
 <body>
 
 <!--ADD, AD Test-->
     <header>
         <link rel="stylesheet" href="{% static 'css/headerStyles.css' %}">
-        <!-- <link rel="stylesheet" href="../static/css/headerStyles.css"> -->
+        <!-- <link rel="stylesheet" href="./static/css/headerStyles.css"> -->
         <h2>AD Manager Platform - AD List</h2>
         <input type="button" id="ADDo" value="ADD">
         <input type="button" id="ADTo" value="AD Test">
@@ -204,13 +215,13 @@
 
 
         <script src="{% static 'js/headerModals.js' %}"></script>
-        <!-- <script src="../static/js/headerModals.js"></script> -->
+        <!-- <script src="./static/js/headerModals.js"></script> -->
     </header>
 
 <!--검색-->
     <section class="container">
-        <!--<link rel="stylesheet" href="{% static 'css/searchStyles.css' %}">-->
-        <link rel="stylesheet" href="../static/css/searchStyles.css">
+        <!-- <link rel="stylesheet" href="{% static 'css/searchStyles.css' %}"> -->
+        <link rel="stylesheet" href="./static/css/searchStyles.css">
 
         <select id="searchSelect">
             <option>검색타입</option>
@@ -228,7 +239,7 @@
 
         <!-- <script src="{% static 'js/search.js' %}" ></script> -->
         <script src="../static/js/search.js" ></script>
-
+        
     </section>
 
 <!--광고 리스트-->
@@ -237,7 +248,7 @@
             <article>
                 <link rel="stylesheet" href="{% static 'css/tableStyles.css' %}">
                 <!-- <link rel="stylesheet" href="../static/css/tableStyles.css"> -->
-                <table border="1">
+                <table id="adTable" border="1">
                     <tr>
                         <th>idx</th>
                         <th>title</th>
@@ -250,7 +261,7 @@
 <!--광고리스트 동적페이지-->
                     <script src="{% static 'js/adTable.js' %}"></script>
                     <!-- <script src="../static/js/adTable.js"></script> -->
-
+                    
 <!--detail 모달-->
                     <div id="detailContainer" class="hidden">
                         <div id="detailContent">
@@ -325,36 +336,12 @@
                     </div>
             
                    <script src="{% static 'js/adTableModals.js' %}" ></script>
-                   <!-- <script src="../static/js/adTableModals.js" ></script> -->
+                   <!-- <script src="./static/js/adTableModals.js" ></script> -->
                 </table>
             </article>
             
         </div>
     </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Function to close the ADTcontainer modal
-    function closeADTcontainerModal() {
-        var modal = document.getElementById('ADTcontainer');
-        if (modal) {
-            modal.classList.add('hidden');
-        }
-    }
-
-    // Event listener for the '확인' button in the Target modal
-    var targetConfirmButton = document.getElementById('targetConfirmButton');
-    if (targetConfirmButton) {
-        targetConfirmButton.addEventListener('click', closeADTcontainerModal);
-    }
-
-    // Event listener for the '확인' button in the Result modal
-    var resultConfirmButton = document.getElementById('resultConfirmButton');
-    if (resultConfirmButton) {
-        resultConfirmButton.addEventListener('click', closeADTcontainerModal);
-    }
-});
-</script>
 
 </body>
 </html>

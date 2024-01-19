@@ -17,9 +17,9 @@ const del = document.getElementById('delContainer');
 
 // 각 광고 버튼 이벤트 - adId 설정
 for(let i=0; i<detailO.length; i++){    
-    
     // get_ad_details API
     detailO[i].addEventListener('click', () =>{
+        
         detail.classList.remove('hidden');
         var adId=adIdL[i];
 
@@ -88,7 +88,7 @@ delC[1].addEventListener('click', () =>{
 
 
 
-function requestAPI1(url,met,jsonArray={}){
+function requestAPI(url,met,jsonArray={}){
     const options = {
         method: met,
     };
