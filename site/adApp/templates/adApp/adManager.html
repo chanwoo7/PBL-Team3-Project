@@ -102,14 +102,14 @@
             
         }
         footer{
-            position: fixed;
+            
             bottom:0;
+            display:flex;
             width:100%;
-            padding:10px;
-        }
-       .pagenation{
+            padding:1px;
             justify-content: center;
-       }
+        }
+       
 
     </style>
 
@@ -341,21 +341,21 @@
                  
                 </table>
             </article>
-            
+        </div>
 
             <footer>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
                       
-                      <li class="page-item"><span class="page-link" onclick="pageNum=1;reloadTable(pageNum);">1</span></li>
-                      <li class="page-item"><span class="page-link" onclick="pageNum=2;reloadTable(pageNum);">2</span></li>
-                      <li class="page-item"><span class="page-link" onclick="pageNum=3;reloadTable(pageNum);">3</span></li>
-                      <li class="page-item">
-                      </li>
+                      <li class="page-item"><span class="page-link" onclick="pageNum=1;reloadTable(pageNum).then(DDD())">1</span></li>
+                      <li class="page-item"><span class="page-link" onclick="pageNum=2;reloadTable(pageNum).then(DDD())">2</span></li>
+                      <li class="page-item"><span class="page-link" onclick="pageNum=3;reloadTable(pageNum).then(DDD())">3</span></li>
+                      <script src="{% static 'js/adTableModals.js' %}" ></script>
+
                     </ul>
                   </nav>
             </footer>
-        </div>
+        
     </section>
 
 </body>

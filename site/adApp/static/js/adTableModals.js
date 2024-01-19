@@ -1,16 +1,17 @@
-const detailO = document.getElementsByClassName('detailO');
-const editO = document.getElementsByClassName('editO');
-const delO = document.getElementsByClassName('delO');
 
-const detailC = document.getElementById('detailOk'); 
-const editC = document.getElementsByClassName('editC');// 0:확인, 1:취소
-const delC = document.getElementsByClassName('delC');
+let detailO = document.getElementsByClassName('detailO');
+let editO = document.getElementsByClassName('editO');
+let delO = document.getElementsByClassName('delO');
+console.log(detailO)
+let detailC = document.getElementById('detailOk'); 
+let editC = document.getElementsByClassName('editC');// 0:확인, 1:취소
+let delC = document.getElementsByClassName('delC');
 
 
 
-const detail = document.getElementById('detailContainer');
-const edit = document.getElementById('editContainer');
-const del = document.getElementById('delContainer');
+let detail = document.getElementById('detailContainer');
+let edit = document.getElementById('editContainer');
+let del = document.getElementById('delContainer');
 
 
 
@@ -18,12 +19,13 @@ const del = document.getElementById('delContainer');
 // 각 광고 버튼 이벤트 - adId 설정
 for(let i=0; i<detailO.length; i++){    
     // get_ad_details API
+    
     detailO[i].addEventListener('click', () =>{
         
         detail.classList.remove('hidden');
         var adId=adIdL[i];
 
-        var response = requestAPI('../api/get_ad_details/'+adId+'/',"GET")
+        var response = requestAPI2('../api/get_ad_details/'+adId+'/',"GET")
         console.log(response)
     });
     editO[i].addEventListener('click', () =>{
@@ -77,6 +79,7 @@ editC[1].addEventListener('click', () =>{
 
 //delete_ad API
 delC[0].addEventListener('click', () =>{
+    
     del.classList.add('hidden');
     requestAPI('../api/delete_ad/'+adId+'/','DELETE')
     
@@ -88,7 +91,7 @@ delC[1].addEventListener('click', () =>{
 
 
 
-function requestAPI(url,met,jsonArray={}){
+function requestAPI2(url,met,jsonArray={}){
     const options = {
         method: met,
     };
